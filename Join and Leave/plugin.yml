@@ -1,0 +1,12 @@
+name: CustomJoin
+version: 1.0
+description: Personnaliser les message lorsqu'un joueur quitte ou se connecte
+author: Snorcky
+main: fr.snorcky.CustomJoin.Main
+commands:
+ cj:
+  description: Permet de Reload CustomJoin
+  permission: customjoin.reload
+ version:
+  description: Affiche la version du plugin
+  permission: customjoin.version
