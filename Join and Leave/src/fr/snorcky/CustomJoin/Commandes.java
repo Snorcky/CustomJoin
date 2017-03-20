@@ -28,7 +28,7 @@ public class Commandes implements CommandExecutor {
 			if(p.hasPermission("customjoin.reload")){
 
 				if(args.length == 0){
-					p.sendMessage(ChatColor.RED + "Commande disponible :");
+					p.sendMessage(ChatColor.RED + "Commandes disponible :");
 					p.sendMessage(ChatColor.AQUA + "/cj reload : Recharger le plugin");
 					p.sendMessage(ChatColor.AQUA + "/cj version : Affiche la version du Plugin");
 				}
