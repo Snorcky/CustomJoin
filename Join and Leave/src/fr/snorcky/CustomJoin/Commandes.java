@@ -1,5 +1,6 @@
 package fr.snorcky.CustomJoin;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,9 +36,11 @@ public class Commandes implements CommandExecutor {
 
 				if(args.length == 1){
 					if(args[0].equalsIgnoreCase("reload")){
-						plugin.reloadConfig();
-						plugin.saveConfig();
 						p.sendMessage("Plugin reload");
+						plugin.reloadConfig();
+						Bukkit.getServer().getPluginManager().disablePlugin(plugin);
+						Bukkit.getServer().getPluginManager().enablePlugin(plugin);
+						
 					}
 					if(args[0].equalsIgnoreCase("version")){
 
