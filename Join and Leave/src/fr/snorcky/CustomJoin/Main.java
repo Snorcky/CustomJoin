@@ -18,7 +18,7 @@ public class Main extends JavaPlugin {
             getConfig().options().copyDefaults(true);
             saveDefaultConfig();
         }
-        
+
 		PluginManager pm = getServer().getPluginManager();
 		Listener l = new CustomMessage(this);
 		pm.registerEvents(l, this);
@@ -27,7 +27,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void onDisable(){	
-		saveDefaultConfig();
+		System.out.println("Plugin Désactivé");
 	}
 	
 }

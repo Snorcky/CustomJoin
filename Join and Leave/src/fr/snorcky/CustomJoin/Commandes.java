@@ -36,6 +36,7 @@ public class Commandes implements CommandExecutor {
 				if(args.length == 1){
 					if(args[0].equalsIgnoreCase("reload")){
 						plugin.reloadConfig();
+						plugin.saveConfig();
 						p.sendMessage("Plugin reload");
 					}
 					if(args[0].equalsIgnoreCase("version")){
