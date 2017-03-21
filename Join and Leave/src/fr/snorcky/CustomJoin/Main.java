@@ -27,7 +27,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void onDisable(){	
-		System.out.println("Plugin Désactivé");
+		System.out.println("Disable");
 	}
 	
 }

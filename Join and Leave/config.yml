@@ -1,13 +1,13 @@
 #CustomJoin V1.0
-#CustomJoin est un plugin qui va customiser les message de join et leave.
-#Vous pouvez personnaliser les messages ici même
-#Ce plugin est mon premier plugin ! Soyez sympas :P
+#This is my first plugin. Please be cool :P
+#Author : Snorcky
+#With help of http://bukkit.fr/ community
 
 custom-message:
  join-msg: '&6%p&b est connecte'
  leave-msg: '&6%p&b quitte le serveur'
  
-#"true" désactive les messages de join et de leave
+#"true" disable message when player join or leave the server.
  
 disable:
  join: false

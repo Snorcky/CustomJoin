@@ -29,9 +29,9 @@ public class Commandes implements CommandExecutor {
 			if(p.hasPermission("customjoin.reload")){
 
 				if(args.length == 0){
-					p.sendMessage(ChatColor.RED + "Commandes disponible :");
-					p.sendMessage(ChatColor.AQUA + "/cj reload : Recharger le plugin");
-					p.sendMessage(ChatColor.AQUA + "/cj version : Affiche la version du Plugin");
+					p.sendMessage(ChatColor.RED + "Command's list :");
+					p.sendMessage(ChatColor.AQUA + "/cj reload : Reload CustomJoin");
+					p.sendMessage(ChatColor.AQUA + "/cj version : Show version's plugin");
 				}
 
 				if(args.length == 1){
@@ -45,7 +45,7 @@ public class Commandes implements CommandExecutor {
 					if(args[0].equalsIgnoreCase("version")){
 
 						if(p.hasPermission("customjoin.version")){
-							p.sendMessage(ChatColor.AQUA + "Version du plugin: " + pdf.getVersion());
+							p.sendMessage(ChatColor.AQUA + "CustomJoin : " + pdf.getVersion());
 						}
 					}	
 				}
