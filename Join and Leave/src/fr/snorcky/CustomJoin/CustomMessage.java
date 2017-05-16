@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import net.md_5.bungee.api.ChatColor;
@@ -47,5 +48,17 @@ public class CustomMessage implements Listener {
 			e2.setQuitMessage(colormsgleave.replaceAll("%p", p.getName()));
 		}
 	}
+	
+	@EventHandler (priority = EventPriority.HIGH)
+	public void onFirstJoinMessage(PlayerLoginEvent e3){
+		Player p = e3.getPlayer();
+		String colorfj = config.getString("custom-message.welcome-msg");
+		String colormsgfj = ChatColor.translateAlternateColorCodes('&', colorfj);
+		
+		if(!p.hasPlayedBefore()) {
+			e3.setJoinMessage(colormsgfj.replaceAll("%p", p.getName()));
+			}
+	}
+	
 	
 }

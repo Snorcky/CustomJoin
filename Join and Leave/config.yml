@@ -6,6 +6,7 @@
 custom-message:
  join-msg: '&6%p&b est connecte'
  leave-msg: '&6%p&b quitte le serveur'
+ welcome-msg '&e Bienvenue à &6%p&b sur notre serveur !' 
  
 #"true" disable message when player join or leave the server.
  
