@@ -35,9 +35,9 @@ public class CustomMessage implements Listener {
 			e.setJoinMessage(null);;
 		} else {
 			if(!p.hasPlayedBefore()) {
-				Bukkit.getServer().broadcastMessage(colormsgfj.replaceAll("%p",p.getName()));
+				e.setJoinMessage(colormsgfj.replaceAll("%p", p.getName()));
 			}else{
-			e.setJoinMessage(colormsgjoin.replaceAll("%p", p.getName()));
+				e.setJoinMessage(colormsgjoin.replaceAll("%p", p.getName()));
 			}
 		}
 	}
