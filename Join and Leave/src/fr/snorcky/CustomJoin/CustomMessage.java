@@ -1,12 +1,12 @@
 package fr.snorcky.CustomJoin;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import net.md_5.bungee.api.ChatColor;
@@ -28,11 +28,17 @@ public class CustomMessage implements Listener {
 		Player p = e.getPlayer();
 		String colorjoin = config.getString("custom-message.join-msg");
 		String colormsgjoin = ChatColor.translateAlternateColorCodes('&', colorjoin);
+		String colorfj = config.getString("custom-message.welcome-msg");
+		String colormsgfj = ChatColor.translateAlternateColorCodes('&', colorfj);
 		
 		if(config.getBoolean("disable.join") == true){
 			e.setJoinMessage(null);;
 		} else {
+			if(!p.hasPlayedBefore()) {
+				Bukkit.getServer().broadcastMessage(colormsgfj.replaceAll("%p",p.getName()));
+			}else{
 			e.setJoinMessage(colormsgjoin.replaceAll("%p", p.getName()));
+			}
 		}
 	}
 
@@ -48,17 +54,5 @@ public class CustomMessage implements Listener {
 			e2.setQuitMessage(colormsgleave.replaceAll("%p", p.getName()));
 		}
 	}
-	
-	@EventHandler (priority = EventPriority.HIGH)
-	public void onFirstJoinMessage(PlayerLoginEvent e3){
-		Player p = e3.getPlayer();
-		String colorfj = config.getString("custom-message.welcome-msg");
-		String colormsgfj = ChatColor.translateAlternateColorCodes('&', colorfj);
 		
-		if(!p.hasPlayedBefore()) {
-			e3.setJoinMessage(colormsgfj.replaceAll("%p", p.getName()));
-			}
-	}
-	
-	
 }
