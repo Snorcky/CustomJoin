@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import net.md_5.bungee.api.ChatColor;
@@ -52,6 +53,16 @@ public class CustomMessage implements Listener {
 			e2.setQuitMessage(null);
 		} else {
 			e2.setQuitMessage(colormsgleave.replaceAll("%p", p.getName()));
+		}
+	}
+	
+	@EventHandler (priority = EventPriority.HIGH)
+	public void onKickPlayerMsg(PlayerKickEvent e3){
+		Player p = e3.getPlayer();
+		String colorkick = config.getString("custom-message.kick-msg");
+		String colormsgkick = ChatColor.translateAlternateColorCodes('&', colorkick);
+		if(config.getBoolean("disable.kick") == true){
+		
 		}
 	}
 		
